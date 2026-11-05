@@ -1,0 +1,26 @@
+name: Testar origem de links e leads
+on:
+  pull_request:
+    paths:
+      - "links/index.html"
+      - "links/utm-links.js"
+      - "links/espera/**"
+      - "espera/**"
+      - "APPS-SCRIPT-CODIGO-PROPOSTO.gs"
+      - "tests/utm-attribution.test.cjs"
+      - ".github/workflows/test-utm.yml"
+  workflow_dispatch:
+jobs:
+  attribution:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check links/utm-links.js
+      - run: node --check links/espera/utm-lead.js
+      - run: node --check espera/utm-lead.js
+      - run: node --test tests/utm-attribution.test.cjs
