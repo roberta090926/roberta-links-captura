@@ -39,6 +39,7 @@
       // para deixarem de ser executados.
       window.fbq("consent", "revoke");
     }
+    window.dispatchEvent(new Event("roberta:meta-consent-change"));
   }
 
   // Exclusivamente para integração futura com confirmação verificável do backend.
@@ -50,14 +51,14 @@
         !/^[A-Za-z0-9_-]{8,100}$/.test(comprovante.id)) return false;
     var chave = "rb-meta-lead-confirmado-" + comprovante.id;
     try {
-      if (sessionStorage.getItem(chave)) return false;
+      if (localStorage.getItem(chave)) return false;
     } catch (_) {}
     carregarPixel();
     if (!window.fbq) return false;
     window.fbq("track", "Lead",
       {content_name:"Lista de interesse Desafio 21 Dias"},
       {eventID:"rb-lead-" + comprovante.id});
-    try { sessionStorage.setItem(chave, "1"); } catch (_) {}
+    try { localStorage.setItem(chave, "1"); } catch (_) {}
     return true;
   };
 
