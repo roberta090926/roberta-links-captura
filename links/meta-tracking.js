@@ -28,7 +28,12 @@
   function definirConsentimento(choice) {
     currentConsent = choice;
     try { localStorage.setItem(CONSENT_KEY, choice); } catch (_) {}
-    if (choice === "aceito") carregarPixel();
+    if (choice === "aceito") {
+      if (initialized && window.fbq) {
+        window.fbq("consent", "grant");
+        window.fbq("track", "PageView");
+      } else carregarPixel();
+    }
     else if (initialized && window.fbq) {
       // Evita novos disparos, mas scripts já carregados precisam de nova visita
       // para deixarem de ser executados.
