@@ -18,6 +18,11 @@ function doPost(e) {
   const email = String(p.email || '').trim().toLowerCase();
   const whatsapp = String(p.whatsapp || '').trim();
   const consentimento = p.consentimento === 'sim';
+  // Tag anônima de origem; validada no servidor, sem nome/e-mail/telefone.
+  const origemTag = String(p.rb_origem || '');
+  const origemValida = /^[A-Za-z0-9._-]{1,60}(\|[A-Za-z0-9._-]{0,60}){3}$/.test(origemTag);
+  const descricaoOrigem = 'Página de espera - Desafio 21 Dias' +
+    (origemValida ? ' | ' + origemTag : '');
 
   if (
     nome.length < 2 || nome.length > 120 ||
@@ -56,7 +61,7 @@ function doPost(e) {
       seguro(nome),
       seguro(email),
       seguro(whatsapp),
-      'Página de espera - Desafio 21 Dias',
+      seguro(descricaoOrigem),
       'Sim',
       whatsapp ? 'Sim' : 'Não',
       agora,
