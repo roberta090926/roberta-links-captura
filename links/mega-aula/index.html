@@ -16,6 +16,15 @@ main{position:relative;width:100%;max-width:941px;margin:0 auto;text-align:cente
 #status{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:740px){.art{height:100dvh;min-height:580px}.cta-link{top:46.95%;height:10.85%}}
 @media(min-width:941px){main{box-shadow:0 8px 35px #6e11240a}}
+
+/* Aviso compacto exclusivo desta landing; lógica de consentimento inalterada */
+body #rb-cookie-bar.rb-compact{left:10px;right:10px;bottom:10px;max-width:490px;margin:auto;padding:10px 12px;border-radius:12px;box-shadow:0 3px 14px #37101b23;background:#fffaf9;border:1px solid #e3cdd5;color:#49303a;font:12px/1.45 system-ui,sans-serif}
+body #rb-cookie-bar.rb-compact p{margin:0 0 8px}
+body #rb-cookie-bar.rb-compact a{color:#752c45;text-decoration:underline}
+body #rb-cookie-bar.rb-compact .rb-actions{justify-content:flex-end;gap:7px}
+body #rb-cookie-bar.rb-compact .rb-actions button{font:600 12px/1.3 system-ui,sans-serif;min-height:33px;padding:7px 13px;border-radius:6px}
+body #rb-cookie-config{font:11px system-ui,sans-serif}
+@media(max-width:540px){body #rb-cookie-bar.rb-compact{left:7px;right:7px;bottom:10px;max-width:none}}
 </style>
 <script src="/meta-tracking.js" defer></script>
 </head>
@@ -96,6 +105,39 @@ main{position:relative;width:100%;max-width:941px;margin:0 auto;text-align:cente
     cta.removeAttribute('aria-disabled');status.textContent='Você será direcionada ao WhatsApp para solicitar sua entrada no grupo.';
     cta.addEventListener('click',function(){if(typeof fbq==='function')fbq('trackCustom','CliqueGrupoMegaAula');});
   }else{cta.addEventListener('click',function(e){e.preventDefault();});}
+})();
+</script>
+
+<script>
+/* Só a apresentação na Mega-Aula; não modifica o pixel nem os eventos dos botões. */
+(function(){
+  function compactarAviso(){
+    var barra=document.getElementById('rb-cookie-bar');
+    if(!barra) return false;
+    if(barra.classList.contains('rb-compact')) return true;
+    barra.classList.add('rb-compact');
+    var paragrafo=barra.querySelector('p');
+    if(paragrafo){
+      paragrafo.textContent='Usamos cookies opcionais para medir acessos. ';
+      var detalhes=document.createElement('a');
+      detalhes.href='/espera/privacidade.html';
+      detalhes.textContent='Saiba mais';
+      paragrafo.appendChild(detalhes);
+    }
+    var aceitar=barra.querySelector('button[data-rb="aceito"]');
+    if(aceitar) aceitar.textContent='Aceitar';
+    return true;
+  }
+  if(!compactarAviso()){
+    var observador=new MutationObserver(function(){
+      if(compactarAviso()) observador.disconnect();
+    });
+    observador.observe(document.body,{childList:true});
+    window.addEventListener('load',function(){
+      compactarAviso();
+      observador.disconnect();
+    },{once:true});
+  }
 })();
 </script>
 </body></html>
