@@ -6,108 +6,76 @@
 <meta name="description" content="Participe da comunidade de avisos para receber informações sobre a Aula Gratuita da Roberta.">
 <meta name="robots" content="noindex,nofollow">
 <style>
-:root{--wine:#791329;--wine-dark:#690d23;--gold:#d4a45e;--ink:#3c3032;--blush:#fae5df;--cream:#fff9f6}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 48% 30%,#fffdf9 0%,#fff5ef 55%,#fbe8e3 100%);color:var(--ink);font:18px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1120px;margin:0 auto;padding:36px 28px 55px;text-align:center}
-.brand{color:var(--wine);margin:0 auto 49px}
-.lotus{display:block;width:88px;height:67px;margin:0 auto 6px;overflow:visible}
-.brand-label{font-size:17px;letter-spacing:.29em;font-weight:500;text-transform:uppercase}
-.live-pill{display:inline-flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(125deg,#9e2140,#781128);color:white;padding:11px 30px;border-radius:60px;font-size:clamp(15px,2.6vw,25px);font-weight:600;letter-spacing:.04em;box-shadow:inset 0 1px 0 #ffffff35}
-.live-pill svg{flex:none;width:34px;height:34px}
-h1{font:400 clamp(39px,6vw,74px)/1.08 Georgia,"Times New Roman",serif;color:var(--wine-dark);letter-spacing:-.028em;max-width:1050px;margin:36px auto 19px;text-wrap:balance}
-h1 strong{font-weight:500}
-h1 .underline{display:inline-block;position:relative;white-space:nowrap}
-h1 .underline:after{content:"";position:absolute;left:4%;right:1%;bottom:-.13em;height:.05em;background:var(--gold);border-radius:60% 55% 55% 70%;transform:rotate(-2deg)}
-.subtitle{font-size:clamp(18px,2.35vw,28px);line-height:1.32;margin:29px auto 46px;max-width:790px}
-.event{display:flex;align-items:center;justify-content:center;gap:35px;background:linear-gradient(100deg,#f8e1dc,#fae6df);border-radius:40px;padding:26px 36px;margin:0 auto 39px;max-width:1000px;color:var(--wine-dark);font-size:clamp(18px,3.15vw,34px);font-weight:750;line-height:1.15}
-.event-part{display:flex;align-items:center;justify-content:center;gap:17px;white-space:nowrap}
-.event svg{width:44px;height:44px;flex:none;stroke:var(--wine-dark)}
-.event-sep{height:50px;width:1px;background:#c69270;flex:none}
-.learn-title{display:flex;align-items:center;gap:28px;justify-content:center;color:var(--wine-dark);font-size:clamp(20px,3vw,32px);font-weight:700;margin:32px auto 26px}
-.learn-title:before,.learn-title:after{content:"";height:1px;background:var(--gold);width:min(21vw,255px)}
-.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:center;margin:0 auto 60px}
-.learn-item{display:flex;align-items:center;justify-content:center;gap:16px;padding:15px 22px;font-weight:650;font-size:clamp(17px,2.5vw,27px);text-align:left;line-height:1.16;min-width:0}
-.learn-item+.learn-item{border-left:1px solid #d0a67f}
-.check{background:var(--wine);color:#fff;width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:100%}
-.check svg{width:27px;height:27px}
-.learn-item b{color:var(--wine);font-weight:750}
-.cta{max-width:990px;width:100%;display:flex;align-items:center;justify-content:center;gap:19px;margin:0 auto;text-decoration:none;text-align:center;color:#fff;background:linear-gradient(110deg,#9a1c39 0%,#8c1431 47%,#7b102b 100%);border:1px solid #be7f6d;border-radius:90px;padding:25px 34px;font-size:clamp(19px,3.1vw,34px);font-weight:750;box-shadow:0 13px 19px #89243c2a;line-height:1.18;transition:filter .2s,transform .2s}
-.cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
-.cta:focus-visible{outline:3px solid #b76f83;outline-offset:4px}
-.cta svg{width:34px;height:34px;flex:none}
-.note{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-footer{margin-top:46px;text-align:center;color:#805361;font-size:12px}
-footer a{color:var(--wine)}
-@media(max-width:750px){
-  main{padding:27px 18px 40px}
-  .brand{margin-bottom:30px}
-  .lotus{width:72px;height:58px}
-  .brand-label{font-size:12px;letter-spacing:.2em}
-  .live-pill{gap:10px;padding:10px 20px}
-  .live-pill svg{width:25px;height:25px}
-  h1{font-size:clamp(34px,8.2vw,54px);margin:25px auto 17px;letter-spacing:-.035em}
-  h1 .underline{white-space:normal}
-  .subtitle{font-size:18px;margin:24px auto 31px;max-width:440px}
-  .event{gap:12px;padding:21px 12px;margin-bottom:32px;border-radius:25px;flex-wrap:wrap;font-size:clamp(16px,4.3vw,23px)}
-  .event-part{gap:9px}
-  .event svg{width:25px;height:25px}
-  .event-sep{height:26px}
-  .learn-title{gap:12px;margin:22px auto 18px}
-  .learn-title:before,.learn-title:after{width:12vw}
-  .learn{grid-template-columns:1fr;gap:5px;margin-bottom:30px}
-  .learn-item{justify-content:flex-start;text-align:left;max-width:390px;margin:auto;width:100%;padding:12px 18px;font-size:20px}
-  .learn-item+.learn-item{border:0}
-  .check{width:36px;height:36px}
-  .check svg{width:22px;height:22px}
-  .cta{padding:19px 14px;gap:8px;border-radius:32px;font-size:clamp(16px,4.2vw,23px)}
-  .cta svg{width:23px;height:23px}
-  footer{margin-top:31px}
-}
-@media(max-width:400px){.event{gap:9px}.event-sep{display:none}.event-part{width:100%}.brand-label{font-size:11px}h1{font-size:34px}}
-@media(prefers-reduced-motion:reduce){.cta{transition:none}}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:#fff4ef;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100dvh}
+main{width:100%;margin:auto;text-align:center;max-width:940px}
+.art{width:100%;height:auto;display:block}
+svg text{user-select:none}
+.cta-area{cursor:pointer}.cta-area:focus-visible{outline:6px solid #d6a450;outline-offset:4px}
+#status{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(min-width:941px){main{box-shadow:0 8px 40px rgba(93,20,39,.08)}}
 </style>
 <script src="/meta-tracking.js" defer></script>
 </head>
 <body>
 
 <main>
-<header class="brand">
-  <svg class="lotus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" aria-hidden="true" fill="none" stroke="#791329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M50 11C42 20 37 30 37 42c0 11 6 19 13 23 7-4 13-12 13-23 0-12-5-22-13-31z"/>
-    <path d="M35 23C25 31 22 41 26 50c4 9 14 15 24 15M65 23c10 8 13 18 9 27-4 9-14 15-24 15"/>
-    <path d="M21 38C13 44 12 53 20 60c7 6 18 8 30 5M79 38c8 6 9 15 1 22-7 6-18 8-30 5"/>
-    <path d="M8 66h24M68 66h24"/>
-  </svg>
-  <div class="brand-label">COM ROBERTA BITENCOURT</div>
-</header>
-<section aria-label="Apresentação da aula">
-  <div class="live-pill">
-    <svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="20" cy="20" r="3" fill="currentColor"/><path d="M12 12a11 11 0 0 0 0 16M28 12a11 11 0 0 1 0 16M6 6a20 20 0 0 0 0 28M34 6a20 20 0 0 1 0 28"/></svg>
-    AULA GRATUITA E AO VIVO
-  </div>
-  <h1>Como dizer <strong>NÃO</strong> sem culpa e parar de carregar tudo <span class="underline">sozinha.</span></h1>
-  <p class="subtitle">Uma aula prática para ter mais leveza,<br> equilíbrio e tempo para você.</p>
-  <div class="event" aria-label="26 de novembro às 20h20">
-    <span class="event-part"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="36" height="32" rx="4"/><path d="M14 4v12M34 4v12M6 22h36"/></svg>26 de novembro</span>
-    <span class="event-sep" aria-hidden="true"></span>
-    <span class="event-part"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2.7" stroke-linecap="round"><circle cx="24" cy="24" r="19"/><path d="M24 10v15l11 7"/></svg>às 20h20</span>
-  </div>
-</section>
-<section aria-labelledby="aprendizados">
-  <h2 id="aprendizados" class="learn-title">Você vai aprender:</h2>
-  <div class="learn">
-    <div class="learn-item"><span class="check" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14l7 7L24 7"/></svg></span><span>Como dizer <b>NÃO.</b></span></div>
-    <div class="learn-item"><span class="check" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14l7 7L24 7"/></svg></span><span>Como <b>pedir ajuda.</b></span></div>
-    <div class="learn-item"><span class="check" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14l7 7L24 7"/></svg></span><span>Como estabelecer <b>limites.</b></span></div>
-  </div>
-</section>
-<a id="grupo" class="cta" href="#" aria-disabled="true">Quero garantir minha vaga gratuita
-  <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h23M18 7l9 9-9 9"/></svg>
+<svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 1200" role="img" aria-label="Aula gratuita e ao vivo com Roberta Bitencourt: Como dizer NÃO sem culpa e parar de carregar tudo sozinha. 26 de novembro às 20h20. Garanta sua vaga gratuita.">
+<defs>
+  <radialGradient id="background" cx="50%" cy="47%" r="82%">
+    <stop offset="0%" stop-color="#fffcf9"/><stop offset="60%" stop-color="#fff7f3"/><stop offset="100%" stop-color="#fbeae5"/>
+  </radialGradient>
+  <linearGradient id="button" x1="0" y1="0" x2="1" y2=".6">
+    <stop offset="0%" stop-color="#a41e37"/><stop offset="58%" stop-color="#96152f"/><stop offset="100%" stop-color="#850e2a"/>
+  </linearGradient>
+  <linearGradient id="pill" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#8e0d2c"/><stop offset="100%" stop-color="#960e2e"/>
+  </linearGradient>
+  <linearGradient id="date" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#fce4e0"/><stop offset="100%" stop-color="#f8dcd9"/>
+  </linearGradient>
+  <filter id="buttonshadow" x="-12%" y="-25%" width="124%" height="165%"><feGaussianBlur in="SourceAlpha" stdDeviation="11" result="blur"/><feOffset dy="5" result="offset"/><feComponentTransfer in="offset" result="dark"><feFuncA type="linear" slope=".72"/></feComponentTransfer><feMerge><feMergeNode in="dark"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="940" height="1200" fill="url(#background)"/>
+<text x="470" y="103" text-anchor="middle" fill="#85152e" font-family="Arial, sans-serif" font-weight="500" font-size="33" letter-spacing="7.1">COM ROBERTA BITENCOURT</text>
+<rect x="151" y="134" width="671" height="103" rx="54" fill="url(#pill)"/>
+<g fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round">
+  <circle cx="238" cy="187" r="5.5" fill="#fff" stroke="none"/>
+  <path d="M227 171q-16 16 0 32M249 171q16 16 0 32M215 161q-25 26 0 52M261 161q25 26 0 52"/>
+</g>
+<text x="501" y="206" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="37" font-weight="700" letter-spacing="1">AULA GRATUITA E AO VIVO</text>
+<g fill="#83122c" font-family="Georgia,'Times New Roman',serif" font-size="78" text-anchor="middle">
+  <text x="470" y="342">Como dizer <tspan font-weight="bold">NÃO</tspan></text>
+  <text x="470" y="431">sem culpa e parar de</text>
+  <text x="470" y="517">carregar tudo sozinha.</text>
+</g>
+<path d="M583 546Q721 539 872 540" stroke="#d5a04e" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+<a id="grupo" class="cta-area" href="https://chat.whatsapp.com/D0CxAPqkKDq88KQwD6sP44" target="_blank" rel="noopener noreferrer" aria-label="Quero garantir minha vaga gratuita. Entrar no grupo de WhatsApp">
+  <rect x="109" y="585" width="722" height="169" rx="83" fill="url(#button)" filter="url(#buttonshadow)"/>
+  <text x="470" y="657" text-anchor="middle" font-family="Arial,sans-serif" font-size="52" font-weight="700" fill="#fff">Quero garantir minha</text>
+  <text x="470" y="721" text-anchor="middle" font-family="Arial,sans-serif" font-size="52" font-weight="700" fill="#fff">vaga gratuita</text>
 </a>
-<p id="status" class="note">O link do grupo será habilitado antes da publicação.</p>
-<footer>Roberta Bitencourt · <a href="https://www.instagram.com/arobertabitencourt/">Instagram</a></footer>
+<line x1="94" y1="799" x2="845" y2="799" stroke="#f9e3db" stroke-width="2"/>
+<rect x="63" y="836" width="822" height="111" rx="56" fill="url(#date)"/>
+<g stroke="#84152e" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="99" y="870" width="57" height="51" rx="5"/><path d="M99 885h57M112 863v17M143 863v17"/>
+</g>
+<text x="189" y="915" font-family="Arial,sans-serif" font-size="43" font-weight="700" fill="#84152e">26 de novembro</text>
+<line x1="542" y1="863" x2="542" y2="923" stroke="#ce974d" stroke-width="2"/>
+<g stroke="#84152e" stroke-width="3.7" fill="none" stroke-linecap="round"><circle cx="597" cy="892" r="26"/><path d="M597 873v22l16 9"/></g>
+<text x="648" y="915" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="#84152e">às 20h20</text>
+<line x1="90" y1="1029" x2="306" y2="1029" stroke="#c99b53" stroke-width="2"/>
+<text x="470" y="1037" text-anchor="middle" font-family="Arial,sans-serif" font-size="31" font-weight="700" fill="#70152b">Você vai aprender:</text>
+<line x1="625" y1="1029" x2="849" y2="1029" stroke="#c99b53" stroke-width="2"/>
+<line x1="94" y1="1077" x2="846" y2="1077" stroke="#f1d5ce" stroke-width="1"/>
+<g font-family="Arial,sans-serif" font-size="29" font-weight="700">
+ <g><circle cx="116" cy="1119" r="21" fill="#890f2e"/><path d="M105 1119l8 8 14-16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="156" y="1108" fill="#333">Como dizer</text><text x="156" y="1143" fill="#7d102b">NÃO.</text></g>
+ <line x1="343" y1="1088" x2="343" y2="1161" stroke="#d49a4f" stroke-width="2"/>
+ <g><circle cx="397" cy="1119" r="21" fill="#890f2e"/><path d="M386 1119l8 8 14-16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="435" y="1108" fill="#333">Como</text><text x="435" y="1143" fill="#7d102b">pedir ajuda.</text></g>
+ <line x1="627" y1="1088" x2="627" y2="1161" stroke="#d49a4f" stroke-width="2"/>
+ <g><circle cx="679" cy="1119" r="21" fill="#890f2e"/><path d="M668 1119l8 8 14-16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="719" y="1093" fill="#333">Como</text><text x="719" y="1125" fill="#333">estabelecer</text><text x="719" y="1157" fill="#7d102b">limites.</text></g>
+</g>
+</svg>
+<p id="status" aria-live="polite">Você será direcionada ao WhatsApp para solicitar sua entrada no grupo.</p>
 </main>
 <script>
 (function(){
